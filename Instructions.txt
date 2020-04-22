@@ -1,0 +1,2 @@
+You will get your app in
+Scoreboard\Scoreboard\bin\Debug\Scoreboard.exe just run it

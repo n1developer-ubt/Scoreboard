@@ -45,9 +45,13 @@
             this.ShotTimerLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -166,12 +170,12 @@
             // 
             // AwayPlayerLabel
             // 
-            this.AwayPlayerLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.AwayPlayerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AwayPlayerLabel.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AwayPlayerLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.AwayPlayerLabel.Location = new System.Drawing.Point(848, 208);
+            this.AwayPlayerLabel.Location = new System.Drawing.Point(0, 0);
             this.AwayPlayerLabel.Name = "AwayPlayerLabel";
-            this.AwayPlayerLabel.Size = new System.Drawing.Size(251, 41);
+            this.AwayPlayerLabel.Size = new System.Drawing.Size(415, 52);
             this.AwayPlayerLabel.TabIndex = 25;
             this.AwayPlayerLabel.Text = "Away Player";
             this.AwayPlayerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,12 +194,12 @@
             // 
             // HomePlayerLabel
             // 
-            this.HomePlayerLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.HomePlayerLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HomePlayerLabel.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomePlayerLabel.ForeColor = System.Drawing.SystemColors.Window;
-            this.HomePlayerLabel.Location = new System.Drawing.Point(52, 208);
+            this.HomePlayerLabel.Location = new System.Drawing.Point(0, 0);
             this.HomePlayerLabel.Name = "HomePlayerLabel";
-            this.HomePlayerLabel.Size = new System.Drawing.Size(251, 41);
+            this.HomePlayerLabel.Size = new System.Drawing.Size(415, 52);
             this.HomePlayerLabel.TabIndex = 22;
             this.HomePlayerLabel.Text = "Home Player";
             this.HomePlayerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,7 +219,7 @@
             // ShotTimerLabel
             // 
             this.ShotTimerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ShotTimerLabel.Font = new System.Drawing.Font("Century Gothic", 249.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShotTimerLabel.Font = new System.Drawing.Font("Century Gothic", 219.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShotTimerLabel.ForeColor = System.Drawing.SystemColors.Window;
             this.ShotTimerLabel.Location = new System.Drawing.Point(302, 128);
             this.ShotTimerLabel.Name = "ShotTimerLabel";
@@ -226,15 +230,15 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.TitleLabel);
-            this.panel1.Controls.Add(this.AwayPlayerLabel);
             this.panel1.Controls.Add(this.ExtLabel1);
             this.panel1.Controls.Add(this.ExtLabel2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.GametimeLabel);
             this.panel1.Controls.Add(this.SetScoreLabel2);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.HomePlayerLabel);
             this.panel1.Controls.Add(this.SetScoreLabel1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
@@ -260,6 +264,24 @@
             this.pictureBox2.TabIndex = 35;
             this.pictureBox2.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel2.Controls.Add(this.HomePlayerLabel);
+            this.panel2.Location = new System.Drawing.Point(4, 208);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(415, 52);
+            this.panel2.TabIndex = 36;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel3.Controls.Add(this.AwayPlayerLabel);
+            this.panel3.Location = new System.Drawing.Point(730, 208);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(415, 52);
+            this.panel3.TabIndex = 36;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -280,6 +302,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -302,5 +326,7 @@
         public System.Windows.Forms.Label TitleLabel;
         public System.Windows.Forms.Label ShotTimerLabel;
         public System.Windows.Forms.Label GametimeLabel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
     }
 }

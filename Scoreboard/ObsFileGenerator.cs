@@ -19,7 +19,15 @@ namespace Scoreboard
             Writing = true;
             try
             {
-                File.WriteAllText(FilePath,$"{data.LPGScore}\n{data.LPSScore}\n{data.RPGScore}\n{data.RPSScore}\n{data.GameClock}\n{data.ShotClock}");
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Left Player Name.txt"), data.LName);
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Left Player Game Score.txt"), data.LPGScore);
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Left Player Set Score.txt"), data.LPSScore);
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Right Player Name.txt"), data.RName);
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Right Player Game Score.txt"), data.RPGScore);
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Right Player Set Score.txt"), data.RPSScore);
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Shot Clock.txt"), data.ShotClock);
+                File.WriteAllText(Path.Combine(Application.StartupPath, "Game Clock.txt"), data.GameClock);
+                //File.WriteAllText(FilePath,$"{data.LPGScore}\n{data.LPSScore}\n{data.RPGScore}\n{data.RPSScore}\n{data.GameClock}\n{data.ShotClock}");
             }
             catch (Exception e)
             {
@@ -37,5 +45,7 @@ namespace Scoreboard
         public string LPSScore { get; set; }
         public string GameClock { get; set; }
         public string ShotClock { get; set; }
+        public string LName { get; set; }
+        public string RName { get; set; }
     }
 }

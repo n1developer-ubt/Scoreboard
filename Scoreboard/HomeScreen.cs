@@ -251,6 +251,8 @@ namespace Scoreboard
             {
                 Gm.HomePlayerLabel.Text = "Home Player";
             }
+
+            _currentGameData.LName = HomePlayertextbox.Text;
         }
 
         private void AwayPlayertextbox_TextChanged(object sender, EventArgs e)
@@ -263,6 +265,8 @@ namespace Scoreboard
             {
                 Gm.AwayPlayerLabel.Text = "Away Player";
             }
+
+            _currentGameData.RName = AwayPlayertextbox.Text;
         }
 
         private void EXradioButtonYes1_CheckedChanged(object sender, EventArgs e)
@@ -395,9 +399,14 @@ namespace Scoreboard
         private void Pausebutton2_Click(object sender, EventArgs e)
         {
             PauseShotClock();
-            PauseGameClock();
+            //PauseGameClock();
         }
 
+        private void ResetExtention()
+        {
+            EXradioButtonNo2.Checked = true;
+            EXradioButtonNo1.Checked = true;
+        }
         private void StartValueUpbutton_Click(object sender, EventArgs e)
         {
             StartValue = StartValue + i;
@@ -453,6 +462,7 @@ namespace Scoreboard
                     default:return;
                 }
                 ObsFileGenerator.Write(_currentGameData);
+                ResetExtention();
             }
 
         }
@@ -543,6 +553,16 @@ namespace Scoreboard
                 }
                 Second--;
                 GameTimetextBox.Text = Check.ToString("00") + @":" + Second.ToString("00");
+
+                if (!SwitchPointtextBox.Text.Trim().Equals(""))
+                {
+                    if (SwitchPointtextBox.Text.Trim().Equals(GameTimetextBox.Text.Substring(1).Trim()))
+                    {
+                        //MessageBox.Show("Hello");
+                        Player1.Play();
+                    }
+                }
+                
                 if (Second == 0)
                 {
                     Second = 60;
